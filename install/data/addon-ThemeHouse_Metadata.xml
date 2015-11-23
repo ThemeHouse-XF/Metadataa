@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon addon_id="ThemeHouse_Metadata" title="[⌂] Metadata" version_string="1.0.0a" version_id="1447261019" url="http://xf.themehouse.io/" install_callback_class="ThemeHouse_Install" install_callback_method="install" uninstall_callback_class="ThemeHouse_Install" uninstall_callback_method="uninstall">
+  <admin_navigation/>
+  <admin_permissions/>
+  <admin_style_properties/>
+  <admin_templates/>
+  <admin_template_modifications/>
+  <code_events/>
+  <code_event_listeners>
+    <listener event_id="controller_pre_dispatch" execute_order="10" callback_class="ThemeHouse_Listener_ControllerPreDispatch" callback_method="controllerPreDispatch" active="1" hint="" description=""/>
+    <listener event_id="file_health_check" execute_order="10" callback_class="ThemeHouse_Metadata_Listener_FileHealthCheck" callback_method="fileHealthCheck" active="1" hint="" description=""/>
+    <listener event_id="init_dependencies" execute_order="10" callback_class="ThemeHouse_Listener_InitDependencies" callback_method="initDependencies" active="1" hint="" description=""/>
+    <listener event_id="load_class" execute_order="10" callback_class="ThemeHouse_Metadata_Listener_LoadClass" callback_method="loadClassModel" active="0" hint="XenForo_Model_Thread" description="XenForo_Model_Thread (For XenForo 1.2 and above)" compatibility_switch="1"/>
+    <listener event_id="load_class" execute_order="10" callback_class="ThemeHouse_Metadata_Listener_LoadClass" callback_method="loadClassModel" active="0" hint="XenResource_Model_Resource" description="XenResource_Model_Resource (For XenForo 1.2 and above)" compatibility_switch="1"/>
+    <listener event_id="load_class" execute_order="10" callback_class="ThemeHouse_Metadata_Listener_LoadClass" callback_method="loadClassDataWriter" active="0" hint="XenForo_DataWriter_Discussion_Thread" description="XenForo_DataWriter_Discussion_Thread (For XenForo 1.2 and above)" compatibility_switch="1"/>
+    <listener event_id="load_class" execute_order="10" callback_class="ThemeHouse_Metadata_Listener_LoadClass" callback_method="loadClassDataWriter" active="0" hint="XenResource_DataWriter_Resource" description="XenResource_DataWriter_Resource (For XenForo 1.2 and above)" compatibility_switch="1"/>
+    <listener event_id="load_class" execute_order="10" callback_class="ThemeHouse_Metadata_Listener_LoadClass" callback_method="loadClassController" active="0" hint="XenForo_ControllerPublic_Thread" description="XenForo_ControllerPublic_Thread (For XenForo 1.2 and above)" compatibility_switch="1"/>
+    <listener event_id="load_class" execute_order="10" callback_class="ThemeHouse_Metadata_Listener_LoadClass" callback_method="loadClassController" active="0" hint="XenResource_ControllerPublic_Resource" description="XenResource_ControllerPublic_Resource (For XenForo 1.2 and above)" compatibility_switch="1"/>
+    <listener event_id="load_class" execute_order="10" callback_class="ThemeHouse_Metadata_Listener_LoadClass" callback_method="loadClassController" active="0" hint="XenForo_ControllerPublic_Forum" description="XenForo_ControllerPublic_Forum (For XenForo 1.2 and above)" compatibility_switch="1"/>
+    <listener event_id="load_class_controller" execute_order="10" callback_class="ThemeHouse_Metadata_Listener_LoadClass" callback_method="loadClassController" active="1" hint="" description="(For XenForo 1.1 and below)" compatibility_switch="1"/>
+    <listener event_id="load_class_datawriter" execute_order="10" callback_class="ThemeHouse_Metadata_Listener_LoadClass" callback_method="loadClassDataWriter" active="1" hint="" description="(For XenForo 1.1 and below)" compatibility_switch="1"/>
+    <listener event_id="load_class_model" execute_order="10" callback_class="ThemeHouse_Metadata_Listener_LoadClass" callback_method="loadClassModel" active="1" hint="" description="(For XenForo 1.1 and below)" compatibility_switch="1"/>
+  </code_event_listeners>
+  <cron/>
+  <email_templates/>
+  <email_template_modifications/>
+  <optiongroups>
+    <group group_id="th_metadata" display_order="2000" debug_only="0"/>
+    <option option_id="th_metadata_postImageAltTagDefault" edit_format="textbox" data_type="string" can_backup="1">
+      <default_value/>
+      <edit_format_params/>
+      <sub_options/>
+      <relation group_id="th_metadata" display_order="300"/>
+    </option>
+    <option option_id="th_metadata_resourceDescMetadataDefault" edit_format="callback" data_type="string" can_backup="1">
+      <default_value/>
+      <edit_format_params>ThemeHouse_Metadata_Option_ResManEnabled::renderTextbox</edit_format_params>
+      <sub_options/>
+      <relation group_id="th_metadata" display_order="110"/>
+    </option>
+    <option option_id="th_metadata_resourceKeywordsMetadataDefault" edit_format="callback" data_type="string" can_backup="1">
+      <default_value/>
+      <edit_format_params>ThemeHouse_Metadata_Option_ResManEnabled::renderTextbox</edit_format_params>
+      <sub_options/>
+      <relation group_id="th_metadata" display_order="120"/>
+    </option>
+    <option option_id="th_metadata_resourceRobotsMetadataDefault" edit_format="callback" data_type="string" can_backup="1">
+      <default_value/>
+      <edit_format_params>ThemeHouse_Metadata_Option_ResManEnabled::renderTextbox</edit_format_params>
+      <sub_options/>
+      <relation group_id="th_metadata" display_order="130"/>
+    </option>
+    <option option_id="th_metadata_resourceTitleMetadataDefault" edit_format="callback" data_type="string" can_backup="1">
+      <default_value/>
+      <edit_format_params>ThemeHouse_Metadata_Option_ResManEnabled::renderTextbox</edit_format_params>
+      <sub_options/>
+      <relation group_id="th_metadata" display_order="100"/>
+    </option>
+    <option option_id="th_metadata_threadDescriptionMetadataDefault" edit_format="textbox" data_type="string" can_backup="1">
+      <default_value/>
+      <edit_format_params/>
+      <sub_options/>
+      <relation group_id="th_metadata" display_order="10"/>
+    </option>
+    <option option_id="th_metadata_threadKeywordsMetadataDefault" edit_format="textbox" data_type="string" can_backup="1">
+      <default_value/>
+      <edit_format_params/>
+      <sub_options/>
+      <relation group_id="th_metadata" display_order="20"/>
+    </option>
+    <option option_id="th_metadata_threadRobotsMetadataDefault" edit_format="textbox" data_type="string" can_backup="1">
+      <default_value/>
+      <edit_format_params/>
+      <sub_options/>
+      <relation group_id="th_metadata" display_order="30"/>
+    </option>
+    <option option_id="th_metadata_threadTitleMetadataDefault" edit_format="textbox" data_type="string" can_backup="1">
+      <default_value/>
+      <edit_format_params/>
+      <sub_options/>
+      <relation group_id="th_metadata" display_order="1"/>
+    </option>
+  </optiongroups>
+  <permissions>
+    <permission_groups/>
+    <permissions>
+      <permission permission_group_id="forum" permission_id="editOwnThreadDescMeta" permission_type="flag" default_value="unset" interface_group_id="forumPermissions" display_order="26"/>
+      <permission permission_group_id="forum" permission_id="editOwnThreadKeywordsMeta" permission_type="flag" default_value="unset" interface_group_id="forumPermissions" display_order="26"/>
+      <permission permission_group_id="forum" permission_id="editOwnThreadRobotsMeta" permission_type="flag" default_value="unset" interface_group_id="forumPermissions" display_order="26"/>
+      <permission permission_group_id="forum" permission_id="editOwnThreadTitleMeta" permission_type="flag" default_value="unset" interface_group_id="forumPermissions" display_order="26"/>
+      <permission permission_group_id="resource" permission_id="editOwnResDescMeta" permission_type="flag" default_value="unset" interface_group_id="resourcePermissions" display_order="81"/>
+      <permission permission_group_id="resource" permission_id="editOwnResKeywordsMeta" permission_type="flag" default_value="unset" interface_group_id="resourcePermissions" display_order="81"/>
+      <permission permission_group_id="resource" permission_id="editOwnResRobotsMeta" permission_type="flag" default_value="unset" interface_group_id="resourcePermissions" display_order="81"/>
+      <permission permission_group_id="resource" permission_id="editOwnResTitleMeta" permission_type="flag" default_value="unset" interface_group_id="resourcePermissions" display_order="81"/>
+    </permissions>
+    <interface_groups/>
+  </permissions>
+  <phrases>
+    <phrase title="option_group_th_metadata" version_id="1423651855" version_string="1.0.0"><![CDATA[Metadata by ThemeHouse]]></phrase>
+    <phrase title="option_group_th_metadata_description" version_id="1423651855" version_string="1.0.0"><![CDATA[Options for the Metadata by ThemeHouse add-on.]]></phrase>
+    <phrase title="option_th_metadata_postImageAltTagDefault" version_id="1423651855" version_string="1.0.0"><![CDATA[Default Post Image Alt Tag]]></phrase>
+    <phrase title="option_th_metadata_postImageAltTagDefault_explain" version_id="1423651855" version_string="1.0.0"><![CDATA[Leave blank to use the default alt tag. You may use these placeholders: <b>{$filename}</b> - the image's filename; <b>{$title}</b> - the thread's title; <b>{$forumTitle}</b> - the forum's title, <b>{$author}</b> - the username of the author and <b>{$keywords}</b> - the value of the keywords metatag.]]></phrase>
+    <phrase title="option_th_metadata_resourceDescMetadataDefault" version_id="1423651855" version_string="1.0.0"><![CDATA[Default Resource Description Metadata]]></phrase>
+    <phrase title="option_th_metadata_resourceDescMetadataDefault_explain" version_id="1423651855" version_string="1.0.0"><![CDATA[Leave blank to use the default description. You may use these placeholders: <b>{$title}</b> - the resource's title; <b>{$categoryTitle}</b> - the category's title, and <b>{$author}</b> - the username of the author.]]></phrase>
+    <phrase title="option_th_metadata_resourceKeywordsMetadataDefault" version_id="1423651855" version_string="1.0.0"><![CDATA[Default Resource Keywords Metadata]]></phrase>
+    <phrase title="option_th_metadata_resourceKeywordsMetadataDefault_explain" version_id="1423651855" version_string="1.0.0"><![CDATA[You may use these placeholders: <b>{$title}</b> - the resource's title; <b>{$categoryTitle}</b> - the category's title, and <b>{$author}</b> - the username of the author.]]></phrase>
+    <phrase title="option_th_metadata_resourceRobotsMetadataDefault" version_id="1423651855" version_string="1.0.0"><![CDATA[Default Resource Robots Metadata]]></phrase>
+    <phrase title="option_th_metadata_resourceRobotsMetadataDefault_explain" version_id="1423651855" version_string="1.0.0"><![CDATA[]]></phrase>
+    <phrase title="option_th_metadata_resourceTitleMetadataDefault" version_id="1423651855" version_string="1.0.0"><![CDATA[Default Resource Title Metadata]]></phrase>
+    <phrase title="option_th_metadata_resourceTitleMetadataDefault_explain" version_id="1423651855" version_string="1.0.0"><![CDATA[Leave blank to use the default title. You may use these placeholders: <b>{$title}</b> - the resource's title; <b>{$categoryTitle}</b> - the category's title, and <b>{$author}</b> - the username of the author.]]></phrase>
+    <phrase title="option_th_metadata_threadDescriptionMetadataDefault" version_id="1423651855" version_string="1.0.0"><![CDATA[Default Thread Description Metadata]]></phrase>
+    <phrase title="option_th_metadata_threadDescriptionMetadataDefault_explain" version_id="1423651855" version_string="1.0.0"><![CDATA[Leave blank to use the default description. You may use these placeholders: <b>{$title}</b> - the thread's title; <b>{$forumTitle}</b> - the forum's title, and <b>{$author}</b> - the username of the author.]]></phrase>
+    <phrase title="option_th_metadata_threadKeywordsMetadataDefault" version_id="1423651855" version_string="1.0.0"><![CDATA[Default Thread Keywords Metadata]]></phrase>
+    <phrase title="option_th_metadata_threadKeywordsMetadataDefault_explain" version_id="1423651855" version_string="1.0.0"><![CDATA[You may use these placeholders: <b>{$title}</b> - the thread's title; <b>{$forumTitle}</b> - the forum's title, and <b>{$author}</b> - the username of the author.]]></phrase>
+    <phrase title="option_th_metadata_threadRobotsMetadataDefault" version_id="1423651855" version_string="1.0.0"><![CDATA[Default Thread Robots Metadata]]></phrase>
+    <phrase title="option_th_metadata_threadRobotsMetadataDefault_explain" version_id="1423651855" version_string="1.0.0"><![CDATA[]]></phrase>
+    <phrase title="option_th_metadata_threadTitleMetadataDefault" version_id="1423651855" version_string="1.0.0"><![CDATA[Default Thread Title Metadata]]></phrase>
+    <phrase title="option_th_metadata_threadTitleMetadataDefault_explain" version_id="1423651855" version_string="1.0.0"><![CDATA[Leave blank to use the default title. You may use these placeholders: <b>{$title}</b> - the thread's title; <b>{$forumTitle}</b> - the forum's title, and <b>{$author}</b> - the username of the author.]]></phrase>
+    <phrase title="permission_forum_editOwnThreadDescMeta" version_id="1423651855" version_string="1.0.0"><![CDATA[Edit thread description metadata by self (requires edit own post)]]></phrase>
+    <phrase title="permission_forum_editOwnThreadKeywordsMeta" version_id="1423651855" version_string="1.0.0"><![CDATA[Edit thread keywords metadata by self (requires edit own post)]]></phrase>
+    <phrase title="permission_forum_editOwnThreadRobotsMeta" version_id="1423651855" version_string="1.0.0"><![CDATA[Edit thread robots metadata by self (requires edit own post)]]></phrase>
+    <phrase title="permission_forum_editOwnThreadTitleMeta" version_id="1423651855" version_string="1.0.0"><![CDATA[Edit thread title metadata by self (requires edit own post)]]></phrase>
+    <phrase title="permission_resource_editOwnResDescMeta" version_id="1423651855" version_string="1.0.0"><![CDATA[Edit resource description metadata by self (requires edit by self)]]></phrase>
+    <phrase title="permission_resource_editOwnResKeywordsMeta" version_id="1423651855" version_string="1.0.0"><![CDATA[Edit resource keywords metadata by self (requires edit by self)]]></phrase>
+    <phrase title="permission_resource_editOwnResRobotsMeta" version_id="1423651855" version_string="1.0.0"><![CDATA[Edit resource robots metadata by self (requires edit by self)]]></phrase>
+    <phrase title="permission_resource_editOwnResTitleMeta" version_id="1423651855" version_string="1.0.0"><![CDATA[Edit resource title metadata by self (requires edit by self)]]></phrase>
+    <phrase title="th_description_metadata_metadata" version_id="1423651855" version_string="1.0.0"><![CDATA[Description Metadata]]></phrase>
+    <phrase title="th_edit_metadata_metadata" version_id="1423651855" version_string="1.0.0"><![CDATA[Edit Metadata]]></phrase>
+    <phrase title="th_keywords_metadata_metadata" version_id="1423651855" version_string="1.0.0"><![CDATA[Keywords Metadata]]></phrase>
+    <phrase title="th_robots_metadata_metadata" version_id="1423651855" version_string="1.0.0"><![CDATA[Robots Metadata]]></phrase>
+    <phrase title="th_title_metadata_metadata" version_id="1423651855" version_string="1.0.0"><![CDATA[Title Metadata]]></phrase>
+  </phrases>
+  <route_prefixes/>
+  <style_properties/>
+  <templates>
+    <template title="th_content_view_metadata" version_id="1423651855" version_string="1.0.0"><![CDATA[<xen:if is="{$content.descriptionMetadata}">
+	<xen:container var="$head.description">
+		<meta name="description" content="{$content.descriptionMetadata}" /></xen:container>
+</xen:if>
+<xen:if is="{$content.keywordsMetadata}">
+	<xen:container var="$head.keywords">
+		<meta name="keywords" content="{$content.keywordsMetadata}" /></xen:container>
+</xen:if>
+<xen:if is="{$content.robotsMetadata}">
+	<xen:container var="$head.robots">
+		<meta name="robots" content="{$content.robotsMetadata}" /></xen:container>
+</xen:if>]]></template>
+    <template title="th_metadata_edit_metadata" version_id="1423651855" version_string="1.0.0"><![CDATA[<xen:if hascontent="true">
+	<fieldset>
+		<xen:contentcheck>
+			<xen:if is="{$canEditTitleMetadata}">
+				<dl class="ctrlUnit">
+					<dt><label for="ctrl_title_metadata">{xen:phrase th_title_metadata_metadata}:</label></dt>
+					<dd><input type="text" name="title_metadata" value="{$content.title_metadata}" class="textCtrl" id="ctrl_title_metadata" /></dd>
+				</dl>
+			</xen:if>
+				
+			<xen:if is="{$canEditDescriptionMetadata}">
+				<dl class="ctrlUnit">
+					<dt><label for="ctrl_description_metadata">{xen:phrase th_description_metadata_metadata}:</label></dt>
+					<dd><input type="text" name="description_metadata" value="{$content.description_metadata}" class="textCtrl" id="ctrl_description_metadata" /></dd>
+				</dl>
+			</xen:if>
+				
+			<xen:if is="{$canEditKeywordsMetadata}">
+				<dl class="ctrlUnit">
+					<dt><label for="ctrl_keywords_metadata">{xen:phrase th_keywords_metadata_metadata}:</label></dt>
+					<dd><input type="text" name="keywords_metadata" value="{$content.keywords_metadata}" class="textCtrl" id="ctrl_keywords_metadata" /></dd>
+				</dl>
+			</xen:if>
+				
+			<xen:if is="{$canEditRobotsMetadata}">
+				<dl class="ctrlUnit">
+					<dt><label for="ctrl_robots_metadata">{xen:phrase th_robots_metadata_metadata}:</label></dt>
+					<dd><input type="text" name="robots_metadata" value="{$content.robots_metadata}" class="textCtrl" id="ctrl_robots_metadata" /></dd>
+				</dl>
+			</xen:if>
+		</xen:contentcheck>
+		<input type="hidden" name="metadata_shown" value="1" />
+	</fieldset>
+</xen:if>]]></template>
+    <template title="th_thread_edit_metadata_metadata" version_id="1423651855" version_string="1.0.0"><![CDATA[<xen:title>{xen:phrase edit_thread}: {xen:helper threadPrefix, $thread, escaped}{$thread.title}</xen:title>
+<xen:h1>{xen:phrase edit_thread}: {xen:helper threadPrefix, $thread}{$thread.title}</xen:h1>
+
+<xen:navigation>
+	<xen:breadcrumb source="$nodeBreadCrumbs" />
+	<xen:breadcrumb href="{xen:link full:threads, $thread}">{xen:helper threadPrefix, $thread}{$thread.title}</xen:breadcrumb>
+</xen:navigation>
+
+<xen:container var="$bodyClasses">{xen:helper nodeClasses, $nodeBreadCrumbs, $forum}</xen:container>
+
+<form action="{xen:link 'threads/edit-metadata', $thread}" method="post" class="xenForm formOverlay">
+
+	<xen:include template="th_metadata_edit_metadata">
+		<xen:map from="$thread" to="$content" />
+	</xen:include>
+
+	<dl class="ctrlUnit submitUnit">
+		<dt></dt>
+		<dd>
+			<input type="submit" value="{xen:phrase save_changes}" accesskey="s" class="button primary" />
+		</dd>
+	</dl>
+
+	<input type="hidden" name="_xfToken" value="{$visitor.csrf_token_page}" />
+	<input type="hidden" name="_xfConfirm" value="1" />
+</form>]]></template>
+    <template title="th_thread_tools_metadata" version_id="1423651855" version_string="1.0.0"><![CDATA[<li><a href="{xen:link threads/edit-metadata, $thread}" class="OverlayTrigger">{xen:phrase th_edit_metadata_metadata}</a></li>]]></template>
+  </templates>
+  <public_template_modifications>
+    <modification template="attached_files" modification_key="th_attachedFiles_metadata" description="Add alt tag to attachments." execution_order="10" enabled="1" action="str_replace">
+      <find><![CDATA[alt="{$attachment.filename}"]]></find>
+      <replace><![CDATA[alt="{xen:if {$attachment.alt}, {$attachment.alt}, {$attachment.filename}}"]]></replace>
+    </modification>
+    <modification template="bb_code_tag_attach" modification_key="th_bbCodeTagAttach_metadata" description="Add alt tag to attachments." execution_order="10" enabled="1" action="str_replace">
+      <find><![CDATA[alt="{$attachment.filename}"]]></find>
+      <replace><![CDATA[alt="{xen:if {$attachment.alt}, {$attachment.alt}, {$attachment.filename}}"]]></replace>
+    </modification>
+    <modification template="footer" modification_key="th_copyrightNotice_metadata" description="Copyright notice for [⌂] Metadata" execution_order="1" enabled="1" action="callback">
+      <find><![CDATA[/{xen:phrase (?:xenforo|extra)_copyright}/]]></find>
+      <replace><![CDATA[ThemeHouse_Listener_InitDependencies::copyrightNotice]]></replace>
+    </modification>
+    <modification template="resource_add" modification_key="th_resourceAdd_metadata" description="Adds metadata fields." execution_order="10" enabled="1" action="preg_replace">
+      <find><![CDATA[#<dl class="ctrlUnit submitUnit">#]]></find>
+      <replace><![CDATA[<xen:include template="th_metadata_edit_metadata">
+	<xen:map from="$resource" to="$content" />
+</xen:include>
+
+${0}]]></replace>
+    </modification>
+    <modification template="resource_view" modification_key="th_resourceView_metadata" description="Adds metadata to resource view." execution_order="10" enabled="1" action="preg_replace">
+      <find><![CDATA[#(<xen:h1>.*?<xen:container.*</xen:container>)(.*<xen:hook name="resource_controls".*)(</xen:hook>)#s]]></find>
+      <replace><![CDATA[<xen:if is="{$resource.titleMetadata}"><xen:title>{$resource.titleMetadata}</xen:title></xen:if>
+${1}
+<xen:include template="th_content_view_metadata">
+	<xen:map from="$resource" to="$content" />
+</xen:include>
+${2}
+<xen:if is="{$canEditResourceMetadata}">
+	<xen:include template="th_resource_controls_metadata" />
+</xen:if>
+${3}]]></replace>
+    </modification>
+    <modification template="thread_create" modification_key="th_threadCreate_metadata" description="Adds metadata fields." execution_order="10" enabled="1" action="preg_replace">
+      <find><![CDATA[#<!-- slot: after_options -->#]]></find>
+      <replace><![CDATA[<xen:include template="th_metadata_edit_metadata">
+	<xen:map from="$thread" to="$content" />
+</xen:include>
+
+${0}]]></replace>
+    </modification>
+    <modification template="thread_edit" modification_key="th_threadEdit_metadata" description="Adds metadata fields." execution_order="10" enabled="1" action="preg_replace">
+      <find><![CDATA[#<dl class="ctrlUnit submitUnit">#]]></find>
+      <replace><![CDATA[<xen:include template="th_metadata_edit_metadata">
+	<xen:map from="$thread" to="$content" />
+</xen:include>
+
+${0}]]></replace>
+    </modification>
+    <modification template="thread_view" modification_key="th_threadView_metadata" description="Adds metadata to thread view." execution_order="10" enabled="1" action="preg_replace">
+      <find><![CDATA[#(<xen:title>)(.*?)(</xen:title>.*?<xen:container.*</xen:container>)(.*<xen:elseif is="{\$canEditTitle}" />.*?)(<(?:xen:else|/xen:if))#s]]></find>
+      <replace><![CDATA[${1}{xen:if {$thread.titleMetadata}, {$thread.titleMetadata}, '${2}'}${3}
+<xen:include template="th_content_view_metadata">
+	<xen:map from="$thread" to="$content" />
+</xen:include>
+${4}<xen:if is="{$canEditThreadMetadata}"><xen:include template="th_thread_tools_metadata" /></xen:if>
+<xen:elseif is="{$canEditThreadMetadata}" />
+<xen:include template="th_thread_tools_metadata" />
+${5}]]></replace>
+    </modification>
+  </public_template_modifications>
+  <bb_code_media_sites/>
+  <bb_codes/>
+</addon>
